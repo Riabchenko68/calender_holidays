@@ -92,9 +92,13 @@
                                 }
 
                                 if (items[i].category === 'parashat' && dayDifference <= 0 && dayDifference >= -6) {
-                                    showTorahReading(dateFromJson, title, torah, haftarah);
+                                    showTorahReading(dateFromJson, title);
+                                    showParashaAndCandle('<b>Тора:</b><br> ' + translate(torah));
+                                    showParashaAndCandle('<b>Хавтара:</b><br> ' +  translate(haftarah));
                                 } else if (items[i].category === 'holiday' && dayDifference === 0) {
-                                    showTorahReading(dateFromJson, title, torah, haftarah);
+                                    showTorahReading(dateFromJson, title);
+                                    showParashaAndCandle('<b>Тора:</b><br> ' + translate(torah));
+                                    showParashaAndCandle('<b>Хавтара:</b><br> ' +  translate(haftarah));
                                 }
                             }
                         }   
@@ -114,13 +118,11 @@
                                 let date = items[i].date;          
                                 let candleDate = new Date(date);
 
-                                let correctCandleDate = candleDate.toISOString().split('T')[0]
-                                let todayDate = today.toISOString().split('T')[0]
-                            
-                                let candleTitle = items[i].title;
+                                let correctCandleDate = candleDate.toISOString().split('T')[0];
+                                let todayDate = today.toISOString().split('T')[0];
 
                                 if (correctCandleDate === todayDate && items[i].category === 'candles') {
-                                    showCandleTimes(candleDate);
+                                    showParashaAndCandle('<b>Зажигание свечей: </b><br>' + showTime(candleDate));
                                 }
                             }
                         }   
@@ -160,12 +162,20 @@
 
                 let dateHours = originalDate.getHours();
 
-                let dateMinutes = originalDate.getMinutes()
+                let dateMinutes = originalDate.getMinutes();
 
-                return dateDay + '.' + dateMonth + '.' + dateYear + ' ' + ' в ' + dateHours + ':' + dateMinutes;
+                return newDateString = dateDay + '.' + dateMonth + '.' + dateYear + ' ' + ' в ' + dateHours + ':' + dateMinutes;
             }
 
-            function showTorahReading(dateFromJson, title, torah = null, haftarah = null) {
+            function showParashaAndCandle(originalString) {
+                let newString = document.createElement('p');
+                newString.innerHTML = originalString;
+                newString.style.textAlign = 'left';
+                div.appendChild(newString);
+                return newString;
+            }
+
+            function showTorahReading(dateFromJson, title) {
                 
                 let newParaDate = document.createElement('p');
                 newParaDate.textContent = showTime(dateFromJson).split(' ')[0];
@@ -176,32 +186,8 @@
                 newParaTitel.textContent = title;
                 newParaTitel.style.fontWeight = 'bolder';
                 div.appendChild(newParaTitel);
-
-                if (torah) {
-                    let newParaTorah = document.createElement('p');
-                    newParaTorah.innerHTML = '<b>Тора:</b><br> ' + translate(torah);
-                    newParaTorah.style.textAlign = 'left';
-                    div.appendChild(newParaTorah);
-                }
-
-                if (haftarah) {
-                    let newParaHaftarah = document.createElement('p'); 
-                    newParaHaftarah.innerHTML = '<b>Хавтара:</b><br> ' +  translate(haftarah);
-                    newParaHaftarah.style.textAlign = 'left';
-                    div.appendChild(newParaHaftarah);
-                }
             }
 
-            function showCandleTimes (candleDate) {
-                let newCandleLighting = document.createElement('p'); 
-                newCandleLighting.innerHTML = '<b>Зажигание свечей: </b><br>' + showTime(candleDate);
-                newCandleLighting.style.textAlign = 'left';
-                div.appendChild(newCandleLighting);
-
-                // new changes on branch change show torah reading function
-                let abc = 2;
-
-            }
             getTorahReading();
             getCandleLighting();
         </script>

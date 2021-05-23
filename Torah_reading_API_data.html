@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="icon" href="Ez_haiim.png" type="image/x-icon"/>
+        <title>Чтение Торы API data</title>
+        <style>
+            html {
+                font-size: 150%;
+                color: #4a4a4a;
+            }
+            div {
+                width: 300px;
+                border-collapse: collapse;
+                border: 2px solid rgb(200,200,200);
+                letter-spacing: 1px;
+                font-size: 0.8rem;
+                margin: 10px;
+                text-align: center;
+            }
+            p {
+                margin: 8px;
+            }
+            h1 {
+                font-size: 120%;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <p><h1>Чтение Торы на этой неделе</h1><p>
+            
+        </div>
+        <script>
+            let div = document.querySelector('div');
+            let today = new Date('2021-09-07');
+            let year = today.getFullYear();
+            let month = today.getMonth() + 1;
+            let dateToday = today.getDate();
+            
+            let engRus = new Map([
+                ['Exodus', 'Исход'],
+                ['Ezekiel', 'Иезекииль'],
+                ['Moshe', 'Моисей'],
+                ['Numbers', 'Числа'],
+                ['Hosea', 'Осия'],
+                ['Judges', 'Судьи'],
+                ['Isaiah', 'Исайя'],
+                ['Deuteronomy', 'Второзаконие'],
+                ['Jeremiah', 'Иеремия'],
+                ['Leviticus', 'Левит'],
+                ['II Samuel', '2.Царство'],
+                ['I Samuel', '1.Царство'],
+                ['Genesis', 'Бытие'],
+                ['I Kings', '3.Царство'],
+                ['II Kings', '4.Царство'],
+                ['Malachi', 'Малaхии'],
+                ['Joshua', 'Иисус Навин'],
+                ['Amos', 'Амос'],
+                ['Habakkuk', 'Аввакум'],
+                ['Zechariah', 'Захария'],
+                ['Micah', 'Михей'],
+                ['Joel', 'Иоиля'],
+                ['Obadiah', 'Авдия'],
+                ['Shabbat Rosh Chodesh', 'Шаббат Рош Ходеш (начало месяца)']
+            ]);
+
+            function getTorahReading() {            
+                fetch('https://www.hebcal.com/hebcal?v=1&cfg=json&maj=on&min=on&year='+year+'&ss=on&s=on&lg=ru&city=DE-Berlin').then(function(response) {
+                    response.json().then(function(json) {
+                        let items = json.items; 
+                        getResult();
+            
+                        function getResult() {
+                            for (var i = 0; i < items.length; i++) {
+
+                                let date = items[i].date;          
+                                let dateFromJson = new Date(date);
+
+                                let dayDifference = Math.floor((today - dateFromJson)/(24*60*60*1000));
+                                
+                                let title = items[i].title;
+
+                                let haftarah = null;
+                                if (undefined !== items[i].leyning) {
+                                    haftarah = items[i].leyning.haftarah;
+                                }
+
+                                let torah = null;
+                                if (undefined !== items[i].leyning) {
+                                    torah = items[i].leyning.torah;
+                                }
+
+                                if (items[i].category === 'parashat' && dayDifference <= 0 && dayDifference >= -6) {
+                                    showTorahReading(dateFromJson, title, torah, haftarah);
+                                } else if (items[i].category === 'holiday' && dayDifference === 0) {
+                                    showTorahReading(dateFromJson, title, torah, haftarah);
+                                }
+                            }
+                        }   
+                    });
+                });
+            }
+
+            function getCandleLighting() {            
+                fetch('https://www.hebcal.com/shabbat?v=1&cfg=json&lg=ru&city=DE-Munich&gy='+year+'&gm='+month+'&gd='+dateToday).then(function(response) {
+                    response.json().then(function(json) {
+                        let items = json.items; 
+                        getResult();
+            
+                        function getResult() {
+                            for (var i = 0; i < items.length; i++) {
+
+                                let date = items[i].date;          
+                                let candleDate = new Date(date);
+
+                                let correctCandleDate = candleDate.toISOString().split('T')[0]
+                                let todayDate = today.toISOString().split('T')[0]
+                            
+                                let candleTitle = items[i].title;
+
+                                if (correctCandleDate === todayDate && items[i].category === 'candles') {
+                                    showCandleTimes(candleDate);
+                                }
+                            }
+                        }   
+                    });
+                });
+            }
+
+            function translate(originalString) {
+                if (null === originalString) {
+                    return;
+                }
+
+                let translatedString = '';
+                let originalArray = originalString.split(';');
+                for (var i = 0; i < originalArray.length; i++) {
+                    let originalWord = originalArray[i].slice(0, originalArray[i].search(/\d+/)).trim();
+                    if (engRus.get(originalWord)) {
+                        translatedString += originalArray[i].replace(originalWord, engRus.get(originalWord)).split('|')[0] + '<br>';
+                    }
+                }
+
+                return translatedString;
+            }
+
+            function showTime(originalDate){
+                let dateDay = originalDate.getDate();
+                if (dateDay < 10) {
+                    dateDay = '0' + dateDay;
+                }
+
+                let dateMonth = originalDate.getMonth() + 1;
+                if (dateMonth < 10) {
+                    dateMonth = '0' + dateMonth;
+                }
+
+                let dateYear = originalDate.getFullYear();
+
+                let dateHours = originalDate.getHours();
+
+                let dateMinutes = originalDate.getMinutes()
+
+                return dateDay + '.' + dateMonth + '.' + dateYear + ' ' + ' в ' + dateHours + ':' + dateMinutes;
+            }
+
+            function showTorahReading(dateFromJson, title, torah = null, haftarah = null) {
+                
+                let newParaDate = document.createElement('p');
+                newParaDate.textContent = showTime(dateFromJson).split(' ')[0];
+                newParaDate.style.color = 'green';
+                div.appendChild(newParaDate); 
+
+                let newParaTitel = document.createElement('p');
+                newParaTitel.textContent = title;
+                newParaTitel.style.fontWeight = 'bolder';
+                div.appendChild(newParaTitel);
+
+                if (torah) {
+                    let newParaTorah = document.createElement('p');
+                    newParaTorah.innerHTML = '<b>Тора:</b><br> ' + translate(torah);
+                    newParaTorah.style.textAlign = 'left';
+                    div.appendChild(newParaTorah);
+                }
+
+                if (haftarah) {
+                    let newParaHaftarah = document.createElement('p'); 
+                    newParaHaftarah.innerHTML = '<b>Хавтара:</b><br> ' +  translate(haftarah);
+                    newParaHaftarah.style.textAlign = 'left';
+                    div.appendChild(newParaHaftarah);
+                }
+            }
+
+            function showCandleTimes (candleDate) {
+                let newCandleLighting = document.createElement('p'); 
+                newCandleLighting.innerHTML = '<b>Зажигание свечей: </b><br>' + showTime(candleDate);
+                newCandleLighting.style.textAlign = 'left';
+                div.appendChild(newCandleLighting);
+
+                // new branch changes
+                let x = 2;
+
+            }
+            getTorahReading();
+            getCandleLighting();
+        </script>
+    </body>
+</html>

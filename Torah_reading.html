@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="icon" href="Ez_haiim.png" type="image/x-icon"/>
+        <title>Чтение Торы  </title>
+        <style>
+            html {
+                font-size: 150%;
+                color: #4a4a4a;
+            }
+            table {
+                border-collapse: collapse;
+                border: 2px solid rgb(200,200,200);
+                letter-spacing: 1px;
+                font-size: 0.8rem;
+                display: none;
+            }
+            td, th {
+                border: 1px solid rgb(190,190,190);
+                padding: 10px 20px;
+            }
+            a {
+                color: blue;
+            }
+            div {
+                width: 300px;
+                border-collapse: collapse;
+                border: 2px solid rgb(200,200,200);
+                letter-spacing: 1px;
+                font-size: 0.8rem;
+                margin: 10px;
+                text-align: center;
+            }
+            .para_data{
+                margin: 10px;
+                text-align: center;
+            }
+            .para_name {
+                font-weight: bolder;
+                text-align: left;
+                margin: 5px;
+                margin-left: 15px;
+            }
+            .para_link {
+                text-align: left;
+                margin: 5px;
+                margin-left: 15px;
+            }
+            .para_month {
+                font-style: italic;
+                text-align: left;
+                margin: 5px;
+                margin-left: 15px;
+            }
+            .para_holiday {
+                font-weight: bolder;
+                text-align: left;
+                margin: 5px;
+                margin-left: 15px;
+            }
+            img {
+                width: 70px;
+                height: 60px;
+                margin-left: 10px;
+                margin-top: 10px;
+                position: relative;
+                float: left;
+                transform: rotate3d(1, 1, 1, 0deg);
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <caption>График чтения Торы на 2021 год.
+                <h2>Jüdisches Jahr 5781</h2>
+            </caption>
+            <thead>
+               <tr>
+                    <th scope="col">Hомер недели</th>
+                    <th scope="col">Дата</th>
+                    <th scope="col">Название</th>
+                    <th scope="col">Ссылка<br>URL</th>
+                    <th scope="col">Еврейский месяц</th>
+                    <th scope="col">Праздник</th>
+               </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0</td>
+                    <td id="date_0">2.01.21</td>
+                    <td id="name_0">Va-Yechi</td>
+                    <td id="link_0"><a href="http://nssdc.gsfc.nasa.gov/planetary/factsheet/">1.Mose 47,28-50,26<br>1.Könige 2,1-12</a></td>
+                    <td id="month_0">Tevet</td>
+                    <td id="holiday_0">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td id="date_1">9.01.21</td>
+                    <td id="name_1">Shemot</td>
+                    <td id="link_1"><a href="http://nssdc.gsfc.nasa.gov/planetary/factsheet/">2.Mose 1,1-6,1<br>Jesaja 27,6-28,13; 29,22-23<br>SR Jeremia 1,1-2,3</a></td>
+                    <td id="month_1">Tevet</td>
+                    <td id="holiday_1">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td id="date_2">16.01.21</td>
+                    <td id="name_2">Va-Era</td>
+                    <td id="link_2"><a href="http://nssdc.gsfc.nasa.gov/planetary/factsheet/">2.Mose 6,2-9,35<br>Hesekiel28,25-29,21</a></td>
+                    <td id="month_2">Shevat</td>
+                    <td id="holiday_2">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td id="date_3">23.01.21</td>
+                    <td id="name_3">Bo</td>
+                    <td id="link_3"><a href="http://nssdc.gsfc.nasa.gov/planetary/factsheet/">2.Mose 6,2-9,35<br>Jeremia 46.13-28</a></td>
+                    <td id="month_3">Shevat</td>
+                    <td id="holiday_3">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td id="date_4">30.01.21</td>
+                    <td id="name_4">Be-Shallah</td>
+                    <td id="link_4"><a href="http://nssdc.gsfc.nasa.gov/planetary/factsheet/">2.Mose 13,17-17,16<br>Richter 4,4-5,31<br>SR Richter 5,1-31</a></td>
+                    <td id="month_4">Shevat</td>
+                    <td id="holiday_4">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td id="date_5">6.02.21</td>
+                    <td id="name_5">Yitro</td>
+                    <td id="link_5"><a href="http://nssdc.gsfc.nasa.gov/planetary/factsheet/">2.Mose 18,1-20,23<br>Jesaja 6,1-7,6; 9,5-6<br>SR Jesaja 6,1-13</a></td>
+                    <td id="month_5">Shevat</td>
+                    <td id="holiday_5">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td id="date_6">13.02.21</td>
+                    <td id="name_6">Mishpatim/Shekalim</td>
+                    <td id="link_6"><a href="http://nssdc.gsfc.nasa.gov/planetary/factsheet/">2.Mose 21,1-24,18<br>4.Mose 28,9-15<br>2.Mose 30,11-16<br>2.Könige 12,1-17</a></td>
+                    <td id="month_6">1.Adar</td>
+                    <td id="holiday_6">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td id="date_7">20.02.21</td>
+                    <td id="name_7">Terumah/Zachor</td>
+                    <td id="link_7"><a href="http://nssdc.gsfc.nasa.gov/planetary/factsheet/">2.Mose 25,1-27,19<br>5.Mose 25,17-19<br>1.Samuel 15,2-34</a></td>
+                    <td id="month_7">Adar</td>
+                    <td id="holiday_7">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td id="date_8">27.02.21</td>
+                    <td id="name_8">Tezavveh</td>
+                    <td id="link_8"><a href="http://nssdc.gsfc.nasa.gov/planetary/factsheet/">2.Mose 27,20-30,10<br>Hesekiel 43,10-27</a></td>
+                    <td id="month_8">Adar</td>
+                    <td id="holiday_8">ShushanPurim<br><a href="http://nssdc.gsfc.nasa.gov/planetary/factsheet/">2.Mose 17,8-16</a></td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td id="date_9">06.03.21</td>
+                    <td id="name_9">Ki Tisa/Parah</td>
+                    <td id="link_9"><a href="http://nssdc.gsfc.nasa.gov/planetary/factsheet/">2.Mose 30,11-34,35<br>4.Mose 19,1-22<br>Hesekiel 36,16-38</a></td>
+                    <td id="month_9">Adar</td>
+                    <td id="holiday_9">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td id="date_10">13.03.21</td>
+                    <td id="name_10">HaChodesh<br>Vayakhel/Pekudei</td>
+                    <td id="link_10"><a href="http://nssdc.gsfc.nasa.gov/planetary/factsheet/">2.Mose 35,1-40,38<br>2.Mose 12,1-20<br>Hesekiel 45,16-46,18<br>SR 1.Könige7,40-50</a></td>
+                    <td id="month_10">Adar</td>
+                    <td id="holiday_10">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td id="date_11">20.03.21</td>
+                    <td id="name_11">Vayikra</td>
+                    <td id="link_11"><a href="http://nssdc.gsfc.nasa.gov/planetary/factsheet/">3.Mose 1,1-5,26<br>Jesaja 43,21-44,23</a></td>
+                    <td id="month_11">Nisan</td>
+                    <td id="holiday_11">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td id="date_12">27.03.21</td>
+                    <td id="name_12">Tzav/Ha-Gadol</td>
+                    <td id="link_12"><a href="http://nssdc.gsfc.nasa.gov/planetary/factsheet/">3.Mose 6,1-8,36<br>Maleachi 3,4-24</a></td>
+                    <td id="month_12">Nisan</td>
+                    <td id="holiday_12">Erew Pessach</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td id="date_13">03.04.21</td>
+                    <td id="name_13">Pessach VII</td>
+                    <td id="link_13"><a href="http://nssdc.gsfc.nasa.gov/planetary/factsheet/">2.Mose 13,17-15,26<br>4.Mose 28,19-25<br>2.Samuel 22,1-51</a></td>
+                    <td id="month_13">Nisan</td>
+                    <td id="holiday_13"></td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td id="date_14">10.04.21</td>
+                    <td id="name_14">Shemini</td>
+                    <td id="link_14"><a href="http://nssdc.gsfc.nasa.gov/planetary/factsheet/">3.Mose 9,1-11,47<br>2.Samuel 6,1-7,17<br>SR 2.Samuel 6,1-19</a></td>
+                    <td id="month_14">Nisan</td>
+                    <td id="holiday_14"></td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td id="date_15">17.04.21</td>
+                    <td id="name_15">Tazri'a/Mezora</td>
+                    <td id="link_15"><a href="http://nssdc.gsfc.nasa.gov/planetary/factsheet/">3.Mose 12,1-15,33<br>2.Könige 7,3-7,20</a></td>
+                    <td id="month_15">Iyyar</td>
+                    <td id="holiday_15"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <img src="Torah.jpg">
+            <p>Чтение Торы<br>на этой неделе<p>
+            <p class="para_data"></p>
+            <p class="para_month"></p>
+            <p class="para_name"></p>
+            <p class="para_link"></p>
+            <p class="para_holiday"></p>
+        </div>
+
+        <script>
+            todaydate = new Date();
+            var oneJan = new Date(todaydate.getFullYear(), 0, 1);
+            var numberOfDays =  Math.floor((todaydate - oneJan) / (24 * 60 * 60 * 1000));
+            //(todaydate.getDay() + 1 + numberOfDays)
+            var weekNumber = Math.ceil((numberOfDays - 7) / 7);
+            console.log(numberOfDays);
+            console.log(weekNumber);
+            
+
+            
+            let data = document.getElementById('date_' + weekNumber);
+            let name = document.getElementById('name_' + weekNumber);
+            let link = document.getElementById('link_'  + weekNumber);
+            let month = document.getElementById('month_'  + weekNumber);
+            let holiday = document.getElementById('holiday_' + weekNumber);
+
+            let paraData = document.querySelector('.para_data');
+            let paraName = document.querySelector('.para_name');
+            let paraLink = document.querySelector('.para_link');
+            let paraMonth = document.querySelector('.para_month');
+            let paraHoliday = document.querySelector('.para_holiday');
+            paraData.innerHTML = todaydate.getDate() + '.' + (todaydate.getMonth() + 1) + '.' + todaydate.getFullYear();
+            paraName.innerHTML = name.innerHTML;
+            paraLink.innerHTML = link.innerHTML;
+            paraMonth.innerHTML = month.innerHTML + ' ' + 5781;
+            paraHoliday.innerHTML = holiday.innerHTML;
+        </script>
+    </body>
+</html>

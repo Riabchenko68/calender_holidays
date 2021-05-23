@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="icon" href="Ez_haiim.png" type="image/x-icon"/>
+        <title>Чтение Торы  API parashot</title>
+        <style>
+            html {
+                font-size: 150%;
+                color: #4a4a4a;
+            }
+            div {
+                width: 300px;
+                border-collapse: collapse;
+                border: 2px solid rgb(200,200,200);
+                letter-spacing: 1px;
+                font-size: 0.8rem;
+                margin: 10px;
+                text-align: center;
+            }
+            img {
+                width: 70px;
+                height: 60px;
+                margin-left: 10px;
+                margin-top: 10px;
+                position: relative;
+                float: left;
+                transform: rotate3d(1, 1, 1, 0deg);
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <img src="Torah.jpg">
+            <p>Чтение Торы<br>на этой неделе<p>
+            
+        </div>
+        <script>
+            let div = document.querySelector('div');
+            let today = new Date();
+            let year = today.getFullYear();
+
+            let engRus = new Map([
+                ['Exodus', 'Исход'],
+                ['Ezekiel', 'Иезекииль'],
+                ['Moshe', 'Моисей'],
+                ['Numbers', 'Числа'],
+                ['Hosea', 'Осия']
+            ]);
+
+            function getJson() {            
+                fetch('https://www.hebcal.com/hebcal?v=1&cfg=json&maj=on&min=on&year='+year+'&ss=on&s=on&lg=ru&city=DE-Berlin').then(function(response) {
+                    response.json().then(function(json) {
+                        let items = json.items; 
+                        getResult();
+        
+                        function getResult() {
+                            for (var i = 0; i < items.length; i++) {
+                                let date = items[i].date;            
+                                let dateFromJson = new Date(date);
+                                let dayDifference = Math.floor((today - dateFromJson)/(24*60*60*1000));
+                                
+                                if (items[i].category === 'parashat') {
+                                    let title = items[i].title;
+                                    let torah = items[i].leyning.torah;
+                                    let haftarah = items[i].leyning.haftarah;
+                                    let link = items[i].link;
+                                
+                                    if (dayDifference <= 0 && dayDifference >= -6) {
+                                        let newParaDate = document.createElement('p');
+                                        newParaDate.textContent = date;
+                                        div.appendChild(newParaDate); 
+
+                                        let newParaTitel = document.createElement('p');
+                                        newParaTitel.textContent = title;
+                                        div.appendChild(newParaTitel);
+
+                                        let newParaTorah = document.createElement('p');
+                                        let TorahWord = torah.substring(0, torah.indexOf(" "));
+                                        /*for (let pair of engRus.entries()) {
+                                            if (TorahWord === pair[0]) {
+                                                newParaTorah.innerHTML = torah.replace(TorahWord, pair[1]); 
+                                            }
+                                        }*/
+
+                                        
+
+                                        div.appendChild(newParaTorah);
+
+                                        let newParaHaftarah = document.createElement('p');
+                                        let haftarahWord = haftarah.substring(0, haftarah.indexOf(" "));
+                                        for (let pair of engRus.entries()) {
+                                            if (haftarahWord === pair[0]) {
+                                                newParaHaftarah.innerHTML = haftarah.replace(haftarahWord, pair[1]); 
+                                            }
+                                        }
+                                        div.appendChild(newParaHaftarah);
+                                    }
+                                }
+                            }
+                        }   
+                    });
+                });
+            }     
+            getJson();
+          
+        </script>
+    </body>

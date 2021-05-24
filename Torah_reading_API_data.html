@@ -49,11 +49,11 @@
                 ['Deuteronomy', 'Второзаконие'],
                 ['Jeremiah', 'Иеремия'],
                 ['Leviticus', 'Левит'],
-                ['II Samuel', '2.Царство'],
-                ['I Samuel', '1.Царство'],
+                ['II Samuel', 'II-e Царств'],
+                ['I Samuel', 'I-e Царств'],
                 ['Genesis', 'Бытие'],
-                ['I Kings', '3.Царство'],
-                ['II Kings', '4.Царство'],
+                ['I Kings', 'III-e Царств'],
+                ['II Kings', 'IV-e Царств'],
                 ['Malachi', 'Малaхии'],
                 ['Joshua', 'Иисус Навин'],
                 ['Amos', 'Амос'],
@@ -91,14 +91,17 @@
                                     torah = items[i].leyning.torah;
                                 }
 
+                                let translationsArray = null;
+                                let readyTorahString = '<b>Тора:</b>';
+                                let readyHaftarahString = '<b>Хавтара:</b>';
                                 if (items[i].category === 'parashat' && dayDifference <= 0 && dayDifference >= -6) {
                                     showTorahReading(dateFromJson, title);
-                                    showParashaAndCandle('<b>Тора:</b><br> ' + translate(torah));
-                                    showParashaAndCandle('<b>Хавтара:</b><br> ' +  translate(haftarah));
+                                    showParashaAndCandle(buildReadyString(translate(torah), readyTorahString));
+                                    showParashaAndCandle(buildReadyString(translate(haftarah), readyHaftarahString));
                                 } else if (items[i].category === 'holiday' && dayDifference === 0) {
                                     showTorahReading(dateFromJson, title);
-                                    showParashaAndCandle('<b>Тора:</b><br> ' + translate(torah));
-                                    showParashaAndCandle('<b>Хавтара:</b><br> ' +  translate(haftarah));
+                                    showParashaAndCandle(buildReadyString(translate(torah), readyTorahString));
+                                    showParashaAndCandle(buildReadyString(translate(haftarah), readyHaftarahString));
                                 }
                             }
                         }   
@@ -172,7 +175,6 @@
                 newString.innerHTML = originalString;
                 newString.style.textAlign = 'left';
                 div.appendChild(newString);
-                return newString;
             }
 
             function showTorahReading(dateFromJson, title) {
@@ -186,6 +188,62 @@
                 newParaTitel.textContent = title;
                 newParaTitel.style.fontWeight = 'bolder';
                 div.appendChild(newParaTitel);
+            }
+
+            function getLinkBible(originalString) {
+                let arrayBible = new Map([
+                    ['Exodus', 'Исход'],
+                    ['Ezekiel', 'Иезекииль'],
+                    ['Moshe', 'Моисей'],
+                    ['Числа', 'nu'],
+                    ['Осия', 'ho'],
+                    ['Judges', 'Судьи'],
+                    ['Isaiah', 'Исайя'],
+                    ['Второзаконие', 'de'],
+                    ['Jeremiah', 'Иеремия'],
+                    ['Leviticus', 'Левит'],
+                    ['II-e Царств', '2ki'],
+                    ['I-e Царств', '1ki'],
+                    ['Бытие', 'ge'],
+                    ['III-e Царств', '3ki'],
+                    ['IV-e Царств', '4ki'],
+                    ['Malachi', 'Малaхии'],
+                    ['Joshua', 'Иисус Навин'],
+                    ['Amos', 'Амос'],
+                    ['Habakkuk', 'Аввакум'],
+                    ['Zechariah', 'Захария'],
+                    ['Михей', 'mic'],
+                    ['Иоиля', 'joe'],
+                    ['Obadiah', 'Авдия'],
+                ]);
+                let link = '<a href="[BIBLE_LINK]">' + originalString + '</a>';
+                let linkBible = 'https://allbible.info/bible/sinodal/';
+                    
+                let catWord = originalString.slice(0, originalString.search(/\d+/)).trim();
+
+                searchWord = arrayBible.get(catWord );
+
+                let regex = /\d+/g;
+                let searchNumber = originalString.match(regex);
+
+                let finalNumber = searchNumber[0];
+                    
+                let finalLink = linkBible + searchWord + '/' + finalNumber;
+             
+                return link.replace('[BIBLE_LINK]', finalLink)
+            }
+
+            function buildReadyString(stringToProcess, stringBeginning) {
+                let readyString = stringBeginning;
+                translationsArray = stringToProcess.split('<br>');
+                translationsArray.forEach(function callback (value, key) {
+                    if (value === '') {
+                        return;
+                    }
+                    readyString = readyString + '<br>' + getLinkBible(value);
+                });
+
+                return readyString;
             }
 
             getTorahReading();

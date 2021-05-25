@@ -33,7 +33,7 @@
         </div>
         <script>
             let div = document.querySelector('div');
-            let today = new Date('2021-09-07');
+            let today = new Date('2021-09-16');
             let year = today.getFullYear();
             let month = today.getMonth() + 1;
             let dateToday = today.getDate();
@@ -164,13 +164,22 @@
                 let dateYear = originalDate.getFullYear();
 
                 let dateHours = originalDate.getHours();
+                if (dateHours < 10) {
+                    dateHours = '0' + dateHours;
+                }
 
                 let dateMinutes = originalDate.getMinutes();
+                if (dateMinutes < 10) {
+                    dateMinutes = '0' + dateMinutes;
+                }
 
                 return newDateString = dateDay + '.' + dateMonth + '.' + dateYear + ' ' + ' в ' + dateHours + ':' + dateMinutes;
             }
 
             function showParashaAndCandle(originalString) {
+                if (originalString === undefined) {
+                    return;
+                }
                 let newString = document.createElement('p');
                 newString.innerHTML = originalString;
                 newString.style.textAlign = 'left';
@@ -201,7 +210,7 @@
                     ['Isaiah', 'Исайя'],
                     ['Второзаконие', 'de'],
                     ['Jeremiah', 'Иеремия'],
-                    ['Leviticus', 'Левит'],
+                    ['Левит', 'le'],
                     ['II-e Царств', '2ki'],
                     ['I-e Царств', '1ki'],
                     ['Бытие', 'ge'],
@@ -216,7 +225,7 @@
                     ['Иоиля', 'joe'],
                     ['Obadiah', 'Авдия'],
                 ]);
-                let link = '<a href="[BIBLE_LINK]">' + originalString + '</a>';
+                let link = '<a href="[BIBLE_LINK]" target="_blank">' + originalString + '</a>';
                 let linkBible = 'https://allbible.info/bible/sinodal/';
                     
                 let catWord = originalString.slice(0, originalString.search(/\d+/)).trim();
@@ -234,6 +243,10 @@
             }
 
             function buildReadyString(stringToProcess, stringBeginning) {
+                if (stringToProcess === undefined) {
+                    return;
+                }
+
                 let readyString = stringBeginning;
                 translationsArray = stringToProcess.split('<br>');
                 translationsArray.forEach(function callback (value, key) {

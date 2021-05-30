@@ -24,19 +24,592 @@
             h1 {
                 font-size: 120%;
             }
+            table {
+                border-collapse: collapse;
+                border: 2px solid rgb(200,200,200);
+                letter-spacing: 1px;
+                font-size: 0.8rem;
+                display: none;
+            }
+            td, th {
+                border: 1px solid rgb(190,190,190);
+                padding: 10px 20px;
+            }
         </style>
     </head>
     <body>
+        <table>
+            <thead>
+               <tr>
+                    <th scope="col">Номер</th>
+                    <th scope="col">Название главы</th>
+                    <th scope="col">Тора</th>
+                    <th scope="col">Новый Завет</th>
+               </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td id="showParashaAndCandle_1"> Глава Ва-ехи (И жил)</td>
+                    <td id="torah_1">Бытие 47:28-50:26</td>
+                    <td id="britHadasha_Глава Ваехи_Genesis 47:28-50:26">К Евреям 11:21-22<br>I-е Петра 1:3-9; 2:11-17</td>
+                </tr>
+                <tr> 
+                    <td>2</td>
+                    <td id="showParashaAndCandle_2">Глава Шемот (Имена)</td>
+                    <td id="torah_2">Исход 1:1-6:1</td>
+                    <td id="britHadasha_Глава Шмот_Exodus 1:1-6:1">Деяния 7:17-36; 22:12-16; 24:14-16<br>К Евреям 11:23-26</td>
+                </tr>
+                <tr> 
+                    <td>3</td>
+                    <td id="showParashaAndCandle_3">Глава Ваера (И явился)</td>
+                    <td id="torah_3">Исход 6:2-9:35</td>
+                    <td id="britHadasha_Глава Ваера_Exodus 6:2-9:35">К Римлянам 9:14-24<br>II-е Коринфянам 6:14-7:1<br>От Иоанна 2:1-12</td>
+                </tr>
+                <tr> 
+                    <td>4</td>
+                    <td id="showParashaAndCandle_4">Глава Бо (Войди)</td>
+                    <td id="torah_4">Исход 10:1-13:16</td>
+                    <td id="britHadasha_Глава Бо_Exodus 10:1-13:16">Деяния 13:16-17<br>I-е Коринфянам 11:20-34</td>
+                </tr>
+                <tr> 
+                    <td>5</td>
+                    <td id="showParashaAndCandle_5">Пятнадцатое Швата</td>
+                    <td id="torah_5">Левит 19:23</td>
+                    <td id="britHadasha_Пятнадцатое Швата_">От Луки 6:27-46</td>
+                </tr>
+                <tr> 
+                    <td>6</td>
+                    <td id="showParashaAndCandle_6">Глава Бешалах (Отпустил)</td>
+                    <td id="torah_6">Исход 13:17-17:16</td>
+                    <td id="britHadasha_Глава Бешалах_Exodus 13:17-17:16">От Иоанна 6:22-40<br>От Луки 2:22-24<br>Откровение 15:1-4<br>II-е Коринфянам 8:1-15</td>
+                </tr>
+                <tr> 
+                    <td>7</td>
+                    <td id="showParashaAndCandle_7">Глава Итро (Иофор)</td>
+                    <td id="torah_7">Исход 18:1-20:23</td>
+                    <td id="britHadasha_Глава Итро_Exodus 18:1-20:23">От Матфея 5:17-32<br>От Иоанна 11:1-54<br>II-е Тимофею 2:2</td>
+                </tr>
+                <tr> 
+                    <td>8</td>
+                    <td id="showParashaAndCandle_8">Глава Мишпатим (Законы)</td>
+                    <td id="torah_8">Исход 21:1-24:18</td>
+                    <td id="britHadasha_Глава Мишпатим_Exodus 21:1-24:18">От Матфея 5:38-42<br>От Марка 7:1-23<br>От Луки 8:40-56<br>К Евреям 10:28-39</td>
+                </tr>
+                <tr> 
+                    <td>9</td>
+                    <td id="showParashaAndCandle_9">Глава Трума (Пожертвование)</td>
+                    <td id="torah_9">Исход 25:1-27:19</td>
+                    <td id="britHadasha_Глава Трума_Exodus 25:1-27:19">К Евреям 8:1-6; 9:23-24; 10:1</td>
+                </tr>
+                <tr> 
+                    <td>10</td>
+                    <td id="showParashaAndCandle_10">Вечер Пурима</td>
+                    <td id="torah_10">Исход</td>
+                    <td id="britHadasha_Вечер Пурима">Иакова 4:5-10</td>
+                </tr>
+                <tr> 
+                    <td>11</td>
+                    <td id="showParashaAndCandle_11">Пурим</td>
+                    <td id="torah_11">Исход 17:8-17:16</td>
+                    <td id="britHadasha_Пурим_Exodus 17:8-17:16">Деяния 1:23-26<br>От Иоанна 1:29-31; 10:14-18</td>
+                </tr>
+                <tr> 
+                    <td>12</td>
+                    <td id="showParashaAndCandle_12">Глава Тецаве (Ты повелишь)</td>
+                    <td id="torah_12">Исход 27:20-30:10</td>
+                    <td id="britHadasha_Глава Тецаве_Exodus 27:20-30:10">К Филиппийцам 4:10-20<br>К Евреям 13:10-17</td>
+                </tr>
+                <tr> 
+                    <td>13</td>
+                    <td id="showParashaAndCandle_13">Глава Ки Тиса (Когда исчислишь)</td>
+                    <td id="torah_13">Исход 30:11-34:35</td>
+                    <td id="britHadasha_Глава Ки Тиса_Exodus 30:11-34:35">Деяния 7:35-8:1<br>I-е Коринфянам 8:4-13<br>От Луки 11:14-20</td>
+                </tr>
+                <tr> 
+                    <td>14</td>
+                    <td id="showParashaAndCandle_14">Глава Ваякгель (И собрал)</td>
+                    <td id="torah_14">Исход 35:1-38:20>/td>
+                    <td id="britHadasha_Глава Ваякгель_Exodus 35:1-38:20">К Евреям 9:1-14<br>II-е Коринфянам 9:1-15</td>
+                </tr>
+                <tr> 
+                    <td>15</td>
+                    <td id="showParashaAndCandle_15">Глава Пкудей (Исчисление)</td>
+                    <td id="torah_15">Исход 38:21-40:38</td>
+                    <td id="britHadasha_Глава Пкудей_Exodus 38:21-40:38">I-е Коринфянам 9:6-14<br>Откровение 15:5-8</td>
+                </tr>
+                <tr> 
+                    <td>16</td>
+                    <td id="showParashaAndCandle_16">Глава Ваякгель-Пкудей (Исчисление)</td>
+                    <td id="torah_16">Исход 35:1-40:38</td>
+                    <td id="britHadasha_Глава Ваякгель-Пкудей_Exodus 35:1-40:38">К Евреям 9:1-14<br>II-е Коринфянам 9:1-15<br>I-е Коринфянам 9:6-14<br>Откровение 15:5-8</td>
+                </tr>
+                <tr> 
+                    <td>17</td>
+                    <td id="showParashaAndCandle_17">Глава Ваикра (И воззвал)</td>
+                    <td id="torah_17">Левит 1:1-5:19</td>
+                    <td id="britHadasha_Глава Ваикра_Leviticus 1:1-5:26">К Римлянам 8:1-13<br>К Евреям 10:1-18</td>
+                </tr>
+                <tr> 
+                    <td>18</td>
+                    <td id="showParashaAndCandle_18">Глава Цав (Заповедай)</td>
+                    <td id="torah_18">Левит 6:1-8:36</td>
+                    <td id="britHadasha_Глава Цав_Leviticus 6:1-8:36">От Марка 12:28-34<br>К Евреям 8:1-6<br>I-е Коринфянам 10:14-23</td>
+                </tr>
+                <tr> 
+                    <td>19</td>
+                    <td id="showParashaAndCandle_19">Пэсах I</td>
+                    <td id="torah_19">Исход 12:21-12:51; Числа 28:16-28:25</td>
+                    <td id="britHadasha_Пэсах I_Exodus 12:21-12:51; Numbers 28:16-28:25">От Марка 14:16-25<br>От Луки 22:14-20<br>I-е Коринфянам 5:7, 11:23-26<br>От Иоанна 1:29-31, 10:14-18<br>От Луки 2:22-24, 7:18-23<br>К Римлянам 6:19-23</td>
+                </tr>
+                <tr> 
+                    <td>20</td>
+                    <td id="showParashaAndCandle_20">Пэсах II</td>
+                    <td id="torah_20">Левит 22:26-23:44; Числа 28:16-28:25</td>
+                    <td id="britHadasha_Пэсах II_Leviticus 22:26-23:44; Numbers 28:16-28:25"><br>От Марка 14:16-25<br>От Луки 22:14-20<br>I-е Коринфянам 5:7, 11:23-26<br>От Иоанна 1:29-31, 10:14-18<br>От Луки 2:22-24, 7:18-23<br>К Римлянам 6:19-23</td>
+                </tr>
+                <tr> 
+                    <td>21</td>
+                    <td id="showParashaAndCandle_21">Третий день Пэсах, Холь Амоэд</td>
+                    <td id="torah_21">Исход 13:1-13:16</td>
+                    <td id="britHadasha_Третий день Пэсах, Холь Амоэд_Exodus 13:1-13:16">От Марка 14:16-25<br>От Луки 22:14-20<br>I-е Коринфянам 5:7, 11:23-26<br>От Иоанна 1:29-31, 10:14-18<br>От Луки 2:22-24, 7:18-23<br>К Римлянам 6:19-23</td>
+                </tr>
+                <tr> 
+                    <td>22</td>
+                    <td id="showParashaAndCandle_22">Четвертый день Пэсах, Холь Амоэд</td>
+                    <td id="torah_22">Исход 22:24-23:19</td>
+                    <td id="britHadasha_Четвертый день Пэсах, Холь Амоэд_Exodus 22:24-23:19">От Марка 14:16-25<br>От Луки 22:14-20<br>I-е Коринфянам 5:7, 11:23-26<br>От Иоанна 1:29-31, 10:14-18<br>От Луки 2:22-24, 7:18-23<br>К Римлянам 6:19-23</td>
+                </tr>
+                <tr> 
+                    <td>23</td>
+                    <td id="showParashaAndCandle_23">Пятый день Пэсах, Холь Амоэд</td>
+                    <td id="torah_23">Исход 34:1-34:26</td>
+                    <td id="britHadasha_Пятый день Пэсах, Холь Амоэд_Exodus 34:1-34:26">От Марка 14:16-25<br>От Луки 22:14-20<br>I-е Коринфянам 5:7, 11:23-26<br>От Иоанна 1:29-31, 10:14-18<br>От Луки 2:22-24, 7:18-23<br>К Римлянам 6:19-23</td>
+                </tr>
+                <tr> 
+                    <td>24</td>
+                    <td id="showParashaAndCandle_24">Шестой день Пэсах, Холь Амоэд</td>
+                    <td id="torah_24">Числа 9:1-28:25</td>
+                    <td id="britHadasha_Шестой день Пэсах, Холь Амоэд_Numbers 9:1-28:25">От Марка 14:16-25<br>От Луки 22:14-20<br>I-е Коринфянам 5:7, 11:23-26<br>От Иоанна 1:29-31, 10:14-18<br>От Луки 2:22-24, 7:18-23<br>К Римлянам 6:19-23</td>
+                </tr>
+                <tr> 
+                    <td>25</td>
+                    <td id="showParashaAndCandle_25">Седьмой день Пэсах</td>
+                    <td id="torah_25">Исход 13:17-15:26; Числа 28:19-28:25</td>
+                    <td id="britHadasha_Седьмой день Пэсах_Exodus 13:17-15:26; Numbers 28:19-28:25">От Марка 14:16-25<br>От Луки 22:14-20<br>I-е Коринфянам 5:7, 11:23-26<br>От Иоанна 1:29-31, 10:14-18<br>От Луки 2:22-24, 7:18-23<br>К Римлянам 6:19-23</td>
+                </tr>
+                <tr> 
+                    <td>26</td>
+                    <td id="showParashaAndCandle_26">Глава Шмини (На 8-ой день)</td>
+                    <td id="torah_26">Левит 9:1-11:47</td>
+                    <td id="britHadasha_Глава Шмини_Leviticus 9:1-11:47">От Марка 7:1-23<br>I-е Коринфянам 5:7, 11:23-26<br>От Иоанна 1:29-31, 10:14-18<br>От Луки 2:22-24, 7:18-23<br>К Римлянам 6:19-23</td>
+                </tr>
+                <tr> 
+                    <td>27</td>
+                    <td id="showParashaAndCandle_27">Глава Тазриа (Если зачнет)</td>
+                    <td id="torah_27">Левит 12:1-13:59</td>
+                    <td id="britHadasha_Глава Тазриа_Leviticus 12:1-13:59">I-е Коринфянам 5:9-13<br>От Луки 2:22-24, 7:18-23<br>К Римлянам 6:19-23</td>
+                </tr>
+                <tr> 
+                    <td>28</td>
+                    <td id="showParashaAndCandle_28">Глава Мецора (Прокаженный)</td>
+                    <td id="torah_28">Левит 14:1-15:33</td>
+                    <td id="britHadasha_Глава Мецора_Leviticus 14:1-15:33">Иакова 3:1-12, 4:11-12<br>От Марка 5:24-34<br>От Луки 5:12-14, 7:11-19</td>
+                </tr>
+                <tr> 
+                    <td>29</td>
+                    <td id="showParashaAndCandle_29">Глава Тазриа-Мецора</td>
+                    <td id="torah_29">Левит 12:1-15:33</td>
+                    <td id="britHadasha_Глава Тазриа-Мецора_Leviticus 12:1-15:33">I-е Коринфянам 5:9-13<br>От Луки 2:22-24, 7:18-23<br>К Римлянам 6:19-23<br>Иакова 3:1-12, 4:11-12<br>От Марка 5:24-34<br>От Луки 5:12-14, 7:11-19</td>
+                </tr>
+                <tr> 
+                    <td>30</td>
+                    <td id="showParashaAndCandle_30">Глава Ахарей Мот (После смерти)</td>
+                    <td id="torah_30">Левит 16:1-18:30</td>
+                    <td id="britHadasha_Глава Ахарей Мот_Leviticus 16:1-18:30">II-е Коринфянам 2:1-11<br>К Евреям 9:11-28<br>I-е Петра 1:13-16</td>
+                </tr>
+                <tr> 
+                    <td>31</td>
+                    <td id="showParashaAndCandle_31">Глава Кдошим (Святые)</td>
+                    <td id="torah_31">Левит 19:1-20:27</td>
+                    <td id="britHadasha_Глава Кдошим_Leviticus 19:1-20:27">От Матфея 5:43-48, 15:1-11, 19:16-30, 22:33-40<br>К Римлянам 13:8-10</td>
+                </tr>
+                <tr> 
+                    <td>32</td>
+                    <td id="showParashaAndCandle_32">Глава Ахарей Мот-Кдошим</td>
+                    <td id="torah_32">Левит 16:1-20:27</td>
+                    <td id="britHadasha_Глава Ахарей Мот-Кдошим_Leviticus 16:1-20:27">II-е Коринфянам 2:1-11<br>К Евреям 9:11-28<br>I-е Петра 1:13-16<br>От Матфея 5:43-48, 15:1-11, 19:16-30, 22:33-40<br>К Римлянам 13:8-10</td>
+                </tr>
+                <tr> 
+                    <td>33</td>
+                    <td id="showParashaAndCandle_33">Глава Эмор (Объяви)</td>
+                    <td id="torah_33">Левит 21:1-24:23</td>
+                    <td id="britHadasha_Глава Эмор_Leviticus 21:1-24:23">I-е Петра 2:4-10<br>К Галатам 3:26-29</td>
+                </tr>
+                <tr> 
+                    <td>34</td>
+                    <td id="showParashaAndCandle_34">Глава Бе-ар (На горе)</td>
+                    <td id="torah_34">Левит 25:1-26:2</td>
+                    <td id="britHadasha_Глава Бе-ар_Leviticus 25:1-26:2">От Луки 4:16-21<br>I-е Коринфянам 7:21-24<br>К Галатам 6:7-10<br>II-е Коринфянам 6:14-18</td>
+                </tr>
+                <tr> 
+                    <td>35</td>
+                    <td id="showParashaAndCandle_35">Глава Бехукотай (В уставах Моих)</td>
+                    <td id="torah_35">Левит 26:3-27:34</td>
+                    <td id="britHadasha_Глава Бехукотай_Leviticus 26:3-27:34">От Матфея 22:1-14<br>От Иоанна 14:15-21, 15:10-12<br>От Иоанна 1-2гл.</td>
+                </tr>
+                <tr> 
+                    <td>36</td>
+                    <td id="showParashaAndCandle_36">Глава Бе-ар-Бехукотайр</td>
+                    <td id="torah_36">Левит 25:1-27:34</td>
+                    <td id="britHadasha_Глава Бе-ар-Бехукотай_Leviticus 25:1-27:34">От Луки 4:16-21<br>I-е Коринфянам 7:21-24<br>К Галатам 6:7-10<br>II-е Коринфянам 6:14-18<br>От Матфея 22:1-14<br>От Иоанна 14:15-21, 15:10-12<br>От Иоанна 1-2гл.</td>
+                </tr>
+                <tr> 
+                    <td>37</td>
+                    <td id="showParashaAndCandle_37">Глава Бамидбар (В пустыне)</td>
+                    <td id="torah_37">Числа 1:1-4:20</td>
+                    <td id="britHadasha_Глава Бамидбар_Numbers 1:1-4:20">От Луки 2:1-7<br>I-е Коринфянам 12:12-31</td>
+                </tr>
+                <tr> 
+                    <td>38</td>
+                    <td id="showParashaAndCandle_38">Шавуот I (Пятидесятница)</td>
+                    <td id="torah_38">Исход 19:1-20:23; Числа 28:26-28:31</td>
+                    <td id="britHadasha_Шавуот I_Exodus 19:1-20:23; Numbers 28:26-28:31">Деяния 1:4-5, 2:1-47, 2:1-37<br>От Матфея 3:11-17<br>Откровение 1:9-18<br>II-е Коринфянам 9:1-15</td>
+                </tr>
+                <tr> 
+                    <td>39</td>
+                    <td id="showParashaAndCandle_39">Шавуот II (Пятидесятница)</td>
+                    <td id="torah_39">Второзаконие 15:19-16:17; Числа 28:26-28:31</td>
+                    <td id="britHadasha_Шавуот II_Deuteronomy 15:19-16:17; Numbers 28:26-28:31">Деяния 1:4-5, 2:1-47, 2:1-37<br>От Матфея 3:11-17<br>Откровение 1:9-18<br>II-е Коринфянам 9:1-15</td>
+                </tr>
+                <tr> 
+                    <td>40</td>
+                    <td id="showParashaAndCandle_40">Глава Насо (Исчисли)</td>
+                    <td id="torah_40">Числа 4:21-7:89</td>
+                    <td id="britHadasha_Глава Насо_Numbers 4:21-7:89">От Иоанна 7:53-8:11<br>Деяния 21:17-32</td>
+                </tr>
+                <tr> 
+                    <td>41</td>
+                    <td id="showParashaAndCandle_41">Глава Вегаалотха (Когда зажжешь)</td>
+                    <td id="torah_41">Числа 8:1-12:16</td>
+                    <td id="britHadasha_Глава Вегаалотха_Numbers 8:1-12:16">От Иоанна 6:30-35<br>К Евреям 3:1-16<br>I-е Коринфянам 10:6-13</td>
+                </tr>
+                <tr> 
+                    <td>42</td>
+                    <td id="showParashaAndCandle_42">Глава Шлах (Пошли от себя)</td>
+                    <td id="torah_42">Числа 13:1-15:41</td>
+                    <td id="britHadasha_Глава Шлах_Numbers 13:1-15:41">К Евреям 3:7-4:1</td>
+                </tr>
+                <tr> 
+                    <td>43</td>
+                    <td id="showParashaAndCandle_43">Глава Корах (Корей)</td>
+                    <td id="torah_43">Числа 16:1-18:32</td>
+                    <td id="britHadasha_Глава Корах_Numbers 16:1-18:32">II-е Тимофею 2:8-21<br>Иуды 1:1-25<br>К Римлянам 13:1-7</td>
+                </tr>
+                <tr> 
+                    <td>44</td>
+                    <td id="showParashaAndCandle_44">Глава Хукат (Устав)</td>
+                    <td id="torah_44">Числа 19:1-22:1</td>
+                    <td id="britHadasha_Глава Хукат_Numbers 19:1-22:1">От Иоанна 3:9-21, 4:3-30, 12:27-50</td>
+                </tr>
+                <tr> 
+                    <td>45</td>
+                    <td id="showParashaAndCandle_45">Глава Балак (Валак)</td>
+                    <td id="torah_45">Числа 22:2-25:9</td>
+                    <td id="britHadasha_Глава Балак_Numbers 22:2-25:9">II-е Петра 2:1-22<br>I-е Коринфянам 1:20-31<br>Иуды 1:1</td>
+                </tr>
+                <tr> 
+                    <td>46</td>
+                    <td id="showParashaAndCandle_46">Глава Пинхас (Финеес)</td>
+                    <td id="torah_46">Числа 25:10-30:1</td>
+                    <td id="britHadasha_Глава Пинхас_Numbers 25:10-30:1">От Иоанна 2:13-25<br>К Филиппийцам 2:12-16</td>
+                </tr>
+                <tr> 
+                    <td>47</td>
+                    <td id="showParashaAndCandle_47">Глава Матот (Колена Израиля)</td>
+                    <td id="torah_47">Числа 30:2-32:42</td>
+                    <td id="britHadasha_Глава Матот_Numbers 30:2-32:42">От Матфея 5:33-37<br>К Филиппийцам 2:12-16</td>
+                </tr>
+                <tr> 
+                    <td>48</td>
+                    <td id="showParashaAndCandle_48">Глава Масей (Странствия)</td>
+                    <td id="torah_48">Числа 33:1-36:13</td>
+                    <td id="britHadasha_Глава Масей_Numbers 33:1-36:13">Иакова 4:1-12</td>
+                </tr>
+                <tr> 
+                    <td>49</td>
+                    <td id="showParashaAndCandle_49">Глава Матот-Масей</td>
+                    <td id="torah_49">Числа 30:2-36:13</td>
+                    <td id="britHadasha_Глава Матот-Масей_Numbers 30:2-36:13">От Матфея 5:33-37<br>К Филиппийцам 2:12-16<br>Иакова 4:1-12</td>
+                </tr>
+                <tr> 
+                    <td>50</td>
+                    <td id="showParashaAndCandle_50">Глава Дварим (Слова)</td>
+                    <td id="torah_50">Второзаконие 1:1-3:22</td>
+                    <td id="britHadasha_Глава Дварим_Deuteronomy 1:1-3:22">От Иоанна 15:1-11<br>Деяния 13:13-23</td>
+                </tr>
+                <tr> 
+                    <td>51</td>
+                    <td id="showParashaAndCandle_51">Девятое Ава</td>
+                    <td id="torah_51">Второзаконие 4:25-4:40</td>
+                    <td id="britHadasha_Девятое Ава_Deuteronomy 4:25-4:40">От Матфея 24:1-51</td>
+                </tr>
+                <tr> 
+                    <td>52</td>
+                    <td id="showParashaAndCandle_52">Глава Ваитханан (И молился)</td>
+                    <td id="torah_52">Второзаконие 3:23-7:11</td>
+                    <td id="britHadasha_Глава Ваитханан_Deuteronomy 3:23-7:11">От Матфея 4:1-11<br>От Марка 12:28-34<br>Иакова 2:14-26</td>
+                </tr>
+                <tr> 
+                    <td>53</td>
+                    <td id="showParashaAndCandle_53">Глава Эйкев (Если будете слушать)</td>
+                    <td id="torah_53">Второзаконие 7:12-11:25</td>
+                    <td id="britHadasha_Глава Эйкев_Deuteronomy 7:12-11:25">От Матфея 4:1-11<br>Иакова 5:7-11<br>К Римлянам 8:31-39</td>
+                </tr>
+                <tr> 
+                    <td>54</td>
+                    <td id="showParashaAndCandle_54">Глава Рэ-э (Смотри)</td>
+                    <td id="torah_54">Второзаконие 11:26-16:17</td>
+                    <td id="britHadasha_Глава Рэ-э_Deuteronomy 11:26-16:17">I-е Коринфянам 5:9-13<br>I-е Иоанна 4:1-6</td>
+                </tr>
+                <tr> 
+                    <td>55</td>
+                    <td id="showParashaAndCandle_55">Глава Шофтим (Судьи)</td>
+                    <td id="torah_55">Второзаконие 16:18-21:9</td>
+                    <td id="britHadasha_Глава Шофтим_Deuteronomy 16:18-21:9">От Матфея 5:38-42<br>I-е Коринфянам 5:9-13<br>Иакова 2:2-4</td>
+                </tr>
+                <tr> 
+                    <td>56</td>
+                    <td id="showParashaAndCandle_56">Глава Ки Теце (Когда выйдешь)</td>
+                    <td id="torah_56">Второзаконие 21:10-25:19</td>
+                    <td id="britHadasha_Глава Ки Теце_Deuteronomy 21:10-25:19">От Матфея 5:27-32, 22:23-32<br>К Галатам 3:9-14</td>
+                </tr>
+                <tr> 
+                    <td>57</td>
+                    <td id="showParashaAndCandle_57">Глава Ки Таво (Когда войдешь)</td>
+                    <td id="torah_57">Второзаконие 26:1-29:8</td>
+                    <td id="britHadasha_Глава Ки Таво_Deuteronomy 26:1-29:8">От Матфея 13:1-23<br>Деяния 28:17-31<br>К Римлянам 11:1-15</td>
+                </tr>
+                <tr> 
+                    <td>58</td>
+                    <td id="showParashaAndCandle_58">Глава Ницавим (Вы стоите)</td>
+                    <td id="torah_58">Второзаконие 29:9-30:20</td>
+                    <td id="britHadasha_Глава Ницавим_Deuteronomy 29:9-30:20">К Римлянам 9:30-10:13<br>К Евреям 12:14-15</td>
+                </tr>
+                <tr> 
+                    <td>59</td>
+                    <td id="showParashaAndCandle_59">Рош-А-Шана 5782</td>
+                    <td id="torah_59">Бытие 21:1-21:34; Числа 29:1-29:6</td>
+                    <td id="britHadasha_Рош-А-Шана 5782_Genesis 21:1-21:34; Numbers 29:1-29:6">От Матфея 24:14-42<br>I-е Коринфянам 15:51-54<br>Откровение 10:7<br>I-е Фессалоникийцам 4:13-18</td>
+                </tr>
+                <tr> 
+                    <td>60</td>
+                    <td id="showParashaAndCandle_60">Рош-А-Шана II</td>
+                    <td id="torah_60">Бытие 22:1-22:24; Числа 29:1-29:6</td>
+                    <td id="britHadasha_Рош-А-Шана II_Genesis 22:1-22:24; Numbers 29:1-29:6">От Матфея 24:14-42<br>I-е Коринфянам 15:51-54<br>Откровение 10:7<br>I-е Фессалоникийцам 4:13-18</td>
+                </tr>
+                <tr> 
+                    <td>61</td>
+                    <td id="showParashaAndCandle_61">Глава Ваелех (И пошел)</td>
+                    <td id="torah_61">Второзаконие 31:1-30</td>
+                    <td id="britHadasha_Глава Ваелех_Deuteronomy 31:1-31:30">К Евреям 13:5-8</td>
+                </tr>
+                <tr> 
+                    <td>62</td>
+                    <td id="showParashaAndCandle_62">Глава А-Азину (Внимай!)</td>
+                    <td id="torah_62">Второзаконие 32:1-52</td>
+                    <td id="britHadasha_Глава А-Азину_Deuteronomy 32:1-32:52">К Римлянам 10:14-11:22, 12:14-21</td>
+                </tr>
+                <tr> 
+                    <td>63</td>
+                    <td id="showParashaAndCandle_63">День Раскаяния</td>
+                    <td id="torah_63">Левит 16:1-16:34; Числа 29:7-29:11</td>
+                    <td id="britHadasha_День Раскаяния_Leviticus 16:1-16:34; Numbers 29:7-29:11">II-е Коринфянам 5:10-21<br>К Римлянам 3:21-26</td>
+                </tr>
+                <tr> 
+                    <td>64</td>
+                    <td id="showParashaAndCandle_64">Суккот I (Праздник кущей)</td>
+                    <td id="torah_64">Левит 22:26-23:44; Числа 29:12-29:16</td>
+                    <td id="britHadasha_Суккот I_Leviticus 22:26-23:44; Numbers 29:12-29:16">От Иоанна 7:2-18, 28-29<br>Откровение 21:1-4</td>
+                </tr>
+                <tr> 
+                    <td>65</td>
+                    <td id="showParashaAndCandle_65">Суккот II</td>
+                    <td id="torah_65">Левит 22:26-23:44; Числа 29:12-29:16</td>
+                    <td id="britHadasha_Суккот II_Leviticus 22:26-23:44; Numbers 29:12-29:16">От Иоанна 7:2-18, 28-29<br>Откровение 21:1-4</td>
+                </tr>
+                <tr> 
+                    <td>66</td>
+                    <td id="showParashaAndCandle_66">Третий день Суккота (Холь Амоэд)</td>
+                    <td id="torah_66">Числа 29:17-29:25</td>
+                    <td id="britHadasha_Третий день Суккота (Холь Амоэд)_Numbers 29:17-29:25">От Иоанна 7:2-18, 28-29<br>Откровение 21:1-4</td>
+                </tr>
+                <tr> 
+                    <td>67</td>
+                    <td id="showParashaAndCandle_67">Четвертый день Суккота (Холь Амоэд)</td>
+                    <td id="torah_67">Числа 29:20-29:28</td>
+                    <td id="britHadasha_Четвертый день Суккота (Холь Амоэд)_Numbers 29:20-29:28">От Иоанна 7:2-18, 28-29<br>Откровение 21:1-4</td>
+                </tr>
+                <tr> 
+                    <td>68</td>
+                    <td id="showParashaAndCandle_68">Пятый день Суккота (Холь Амоэд)</td>
+                    <td id="torah_68">Исход 33:12-34:26</td>
+                    <td id="britHadasha_Пятый день Суккота (Холь Амоэд)_Exodus 33:12-34:26">От Иоанна 7:2-18, 28-29<br>Откровение 21:1-4</td>
+                </tr>
+                <tr> 
+                    <td>69</td>
+                    <td id="showParashaAndCandle_69">Шестой день Суккота (Холь Амоэд)</td>
+                    <td id="torah_69">Числа 29:26-29:34</td>
+                    <td id="britHadasha_Шестой день Суккота (Холь Амоэд)_Numbers 29:26-29:34">От Иоанна 7:2-18, 28-29<br>Откровение 21:1-4</td>
+                </tr>
+                <tr> 
+                    <td>70</td>
+                    <td id="showParashaAndCandle_70">Седьмой день Суккота (Ошана Раба)</td>
+                    <td id="torah_70">Числа 29:26-29:34</td>
+                    <td id="britHadasha_Седьмой день Суккота (Ошана Раба)_Numbers 29:26-29:34">От Иоанна 7:2-18, 28-29<br>Откровение 21:1-4</td>
+                </tr>
+                <tr> 
+                    <td>71</td>
+                    <td id="showParashaAndCandle_71">Шмини Ацерет (8-ой день Суккота)</td>
+                    <td id="torah_71">Второзаконие 14:22-16:17; Числа 29:35-30:1</td>
+                    <td id="britHadasha_Шмини Ацерет_Deuteronomy 14:22-16:17; Numbers 29:35-30:1">От Иоанна 7:37-39, 8:12<br>От Матфея 17:1-9<br>От Марка 12:28-33</td>
+                </tr>
+                <tr> 
+                    <td>72</td>
+                    <td id="showParashaAndCandle_72">Симхат Тора (Радость Торы)</td>
+                    <td id="torah_72">Второзаконие 33:1-34:12; Числа 29:35-30:1</td>
+                    <td id="britHadasha_Симхат Тора_Deuteronomy 33:1-34:12; Numbers 29:35-30:1">К Филиппийцам 4:4<br>Откровение 22:1-5<br>От Матфея 5:17-48<br>От Луки 9:28-36<br>Откровение 19:1-16</td>
+                </tr>
+                <tr> 
+                    <td>73</td>
+                    <td id="showParashaAndCandle_73">Глава Берешит (В начале)</td>
+                    <td id="torah_73">Бытие 1:1-6:8</td>
+                    <td id="britHadasha_Глава Берешит_Genesis 1:1-6:8">От Иоанна 1:1-18<br>I-е Коринфянам 6:15-20<br>К Ефесянам 5:21-33<br>К Колоссянам 1:14-17</td>
+                </tr>
+                <tr> 
+                    <td>74</td>
+                    <td id="showParashaAndCandle_74">Глава Ноах (Ной)</td>
+                    <td id="torah_74">Бытие 6:9-11:32</td>
+                    <td id="britHadasha_Глава Ноах_Genesis 6:9-11:32">От Луки 17:26-37<br>II-е Петра 2:5<br>I-е Петра 3:18-22</td>
+                </tr>
+                <tr> 
+                    <td>75</td>
+                    <td id="showParashaAndCandle_75">Глава Лех-Леха (Пойди)</td>
+                    <td id="torah_75">Бытие 12:1-17:27</td>
+                    <td id="britHadasha_Глава Лех-Леха_Genesis 12:1-17:27">Деяния 7:1-8<br>К Галатам 3:15-18, 5:1-6<br>К Евреям 7:1-19, 11:8-12</td>
+                </tr>
+                <tr> 
+                    <td>76</td>
+                    <td id="showParashaAndCandle_76">Глава Ваера (И явился)</td>
+                    <td id="torah_76">Бытие 18:1-22:24</td>
+                    <td id="britHadasha_Глава Ваера_Genesis 18:1-22:24">К Римлянам 9:6-9<br>К Евреям 11:13-19<br>II-е Петра 2:4-11</td>
+                </tr>
+                <tr> 
+                    <td>77</td>
+                    <td id="showParashaAndCandle_77">Глава Хаей Сара (Жизнь Сары)</td>
+                    <td id="torah_77">Бытие 23:1-25:18</td>
+                    <td id="britHadasha_Глава Хаей Сара_Genesis 23:1-25:18">От Матфея 8:19-22, 27:3-10<br>I-е Коринфянам 15:50-57</td>
+                </tr>
+                <tr> 
+                    <td>78</td>
+                    <td id="showParashaAndCandle_78">Глава Толдот (Родословие)</td>
+                    <td id="torah_78">Бытие 25:19-28:9</td>
+                    <td id="britHadasha_Глава Толдот_Genesis 25:19-28:9">К Римлянам 9:6-16<br>К Евреям 12:14-17</td>
+                </tr>
+                <tr> 
+                    <td>79</td>
+                    <td id="showParashaAndCandle_79">Глава Ваеце (Вышел)</td>
+                    <td id="torah_79">Бытие 28:10-32:3</td>
+                    <td id="britHadasha_Глава Ваеце_Genesis 28:10-32:3">От Иоанна 1:43-51<br>От Матфея 15:1-16:28</td>
+                </tr>
+                <tr> 
+                    <td>80</td>
+                    <td id="showParashaAndCandle_80">Глава Ваишлах (И послал)</td>
+                    <td id="torah_80">Бытие 32:4-36:43</td>
+                    <td id="britHadasha_Глава Ваишлах_Genesis 32:4-36:43">От Иоанна 16:33<br>От Матфея 26:36-46<br>II-е Коринфянам 12:7</td>
+                </tr>
+                <tr> 
+                    <td>81</td>
+                    <td id="showParashaAndCandle_81">Глава Ваешев (Поселился)</td>
+                    <td id="torah_81">Бытие 37:1-40:23</td>
+                    <td id="britHadasha_Глава Ваешев_Genesis 37:1-40:23">Деяния 7:9-16</td>
+                </tr>
+                <tr> 
+                    <td>82</td>
+                    <td id="showParashaAndCandle_82">Ханука: 2 Свечи (Праздник Обновления)</td>
+                    <td id="torah_82">Числа 7:1-7:17</td>
+                    <td id="britHadasha_Ханука: 2 Свечи_Numbers 7:1-7:17">От Иоанна 10:22-30, 9:1-9</td>
+                </tr>
+                <tr> 
+                    <td>83</td>
+                    <td id="showParashaAndCandle_83">Ханука: 3 Свечи</td>
+                    <td id="torah_83">Числа 7:18-7:29</td>
+                    <td id="britHadasha_Ханука: 3 Свечи_Numbers 7:18-7:29">От Иоанна 10:22-30, 9:1-9</td>
+                </tr>
+                <tr> 
+                    <td>84</td>
+                    <td id="showParashaAndCandle_84">Ханука: 4 Свечи</td>
+                    <td id="torah_84">Числа 7:24-7:35</td>
+                    <td id="britHadasha_Ханука: 4 Свечи_Numbers 7:24-7:35">От Иоанна 10:22-30, 9:1-9</td>
+                </tr>
+                <tr> 
+                    <td>85</td>
+                    <td id="showParashaAndCandle_85">Ханука: 5 Свечей</td>
+                    <td id="torah_85">Числа 7:30-7:41</td>
+                    <td id="britHadasha_Ханука: 5 Свечей_Numbers 7:30-7:41">От Иоанна 10:22-30, 9:1-9</td>
+                </tr>
+                <tr> 
+                    <td>86</td>
+                    <td id="showParashaAndCandle_86">Ханука: 6 Свечей</td>
+                    <td id="torah_86">Числа 7:36-7:47</td>
+                    <td id="britHadasha_Ханука: 6 Свечей_Numbers 7:36-7:47">От Иоанна 10:22-30, 9:1-9</td>
+                </tr>
+                <tr> 
+                    <td>87</td>
+                    <td id="showParashaAndCandle_87">Ханука: 7 Свечей</td>
+                    <td id="torah_87"></td>
+                    <td id="britHadasha_Ханука: 7 Свечей">От Иоанна 10:22-30, 9:1-9</td>
+                </tr>
+                <tr> 
+                    <td>88</td>
+                    <td id="showParashaAndCandle_88">Ханука: 8 Свечей</td>
+                    <td id="torah_88">Числа 28:1-28:15</td>
+                    <td id="britHadasha_Ханука: 8 Свечей_Numbers 28:1-28:15; 7:48-7:53">От Иоанна 10:22-30, 9:1-9</td>
+                </tr>
+                <tr> 
+                    <td>89</td>
+                    <td id="showParashaAndCandle_89">Ханука: 8-ой День</td>
+                    <td id="torah_89">Числа 7:54-8:4</td>
+                    <td id="britHadasha_Ханука: 8-ой День_Numbers 7:54-8:4">От Иоанна 10:22-30, 9:1-9</td>
+                </tr>
+                <tr> 
+                    <td>90</td>
+                    <td id="showParashaAndCandle_90">Глава Микец (По истечении)</td>
+                    <td id="torah_90">Бытие 41:1-44:17</td>
+                    <td id="britHadasha_Глава Микец_Genesis 41:1-44:17">Деяния 7:11-12<br>I-е Коринфянам 1:18-25</td>
+                </tr>
+                <tr> 
+                    <td>91</td>
+                    <td id="showParashaAndCandle_91">Глава Ваигаш (И подошел)</td>
+                    <td id="torah_91">Бытие 44:18-47:27</td>
+                    <td id="britHadasha_Глава Ваигаш_Genesis 44:18-47:27">Деяния 7:13-15<br>От Луки 6:9-16<br>К Филиппийцам 2:5-11</td>
+                </tr>
+
+            </tbody>
+        </table>
         <div>
             <p><h1>Чтение Торы на этой неделе</h1><p>
             
         </div>
         <script>
             let div = document.querySelector('div');
-            let today = new Date('2021-09-16');
+            let today = new Date();
             let year = today.getFullYear();
             let month = today.getMonth() + 1;
             let dateToday = today.getDate();
+            let newYear = new Date(year + 1 + '-' + '01' + '-' + '01'); 
+            let differenceToNewYear = Math.floor((newYear - today)/(24*60*60*1000));
+            let requestedDate = year + 1;
             
             let engRus = new Map([
                 ['Exodus', 'Исход'],
@@ -49,65 +622,87 @@
                 ['Deuteronomy', 'Второзаконие'],
                 ['Jeremiah', 'Иеремия'],
                 ['Leviticus', 'Левит'],
-                ['II Samuel', 'II-e Царств'],
-                ['I Samuel', 'I-e Царств'],
+                ['II Samuel', 'II-я Царств'],
+                ['I Samuel', 'I-я Царств'],
                 ['Genesis', 'Бытие'],
-                ['I Kings', 'III-e Царств'],
-                ['II Kings', 'IV-e Царств'],
-                ['Malachi', 'Малaхии'],
+                ['I Kings', 'III-я Царств'],
+                ['II Kings', 'IV-я Царств'],
+                ['Malachi', 'Малахия'],
                 ['Joshua', 'Иисус Навин'],
                 ['Amos', 'Амос'],
                 ['Habakkuk', 'Аввакум'],
                 ['Zechariah', 'Захария'],
                 ['Micah', 'Михей'],
-                ['Joel', 'Иоиля'],
-                ['Obadiah', 'Авдия'],
-                ['Shabbat Rosh Chodesh', 'Шаббат Рош Ходеш (начало месяца)']
+                ['Joel', 'Иоиль'],
+                ['Obadiah', 'Авдий']
             ]);
 
-            function getTorahReading() {            
-                fetch('https://www.hebcal.com/hebcal?v=1&cfg=json&maj=on&min=on&year='+year+'&ss=on&s=on&lg=ru&city=DE-Berlin').then(function(response) {
-                    response.json().then(function(json) {
-                        let items = json.items; 
-                        getResult();
-            
-                        function getResult() {
-                            for (var i = 0; i < items.length; i++) {
-
-                                let date = items[i].date;          
-                                let dateFromJson = new Date(date);
-
-                                let dayDifference = Math.floor((today - dateFromJson)/(24*60*60*1000));
-                                
-                                let title = items[i].title;
-
-                                let haftarah = null;
-                                if (undefined !== items[i].leyning) {
-                                    haftarah = items[i].leyning.haftarah;
-                                }
-
-                                let torah = null;
-                                if (undefined !== items[i].leyning) {
-                                    torah = items[i].leyning.torah;
-                                }
-
-                                let translationsArray = null;
-                                let readyTorahString = '<b>Тора:</b>';
-                                let readyHaftarahString = '<b>Хавтара:</b>';
-                                if (items[i].category === 'parashat' && dayDifference <= 0 && dayDifference >= -6) {
-                                    showTorahReading(dateFromJson, title);
-                                    showParashaAndCandle(buildReadyString(translate(torah), readyTorahString));
-                                    showParashaAndCandle(buildReadyString(translate(haftarah), readyHaftarahString));
-                                } else if (items[i].category === 'holiday' && dayDifference === 0) {
-                                    showTorahReading(dateFromJson, title);
-                                    showParashaAndCandle(buildReadyString(translate(torah), readyTorahString));
-                                    showParashaAndCandle(buildReadyString(translate(haftarah), readyHaftarahString));
-                                }
-                            }
-                        }   
+            function getTorahReading() {
+                if (differenceToNewYear >= 7) {            
+                    fetch('https://www.hebcal.com/hebcal?v=1&cfg=json&maj=on&min=on&year='+year+'&ss=on&s=on&lg=ru&city=DE-Berlin').then(function(response) {
+                        response.json().then(function(json) {
+                            let items = json.items; 
+                            getResult(items);
+                        });
                     });
-                });
-            }
+                } else {
+                    fetch('https://www.hebcal.com/hebcal?v=1&cfg=json&maj=on&min=on&year='+requestedDate+'&ss=on&s=on&lg=ru&city=DE-Berlin').then(function(response) {
+                        response.json().then(function(json) {
+                            items = json.items; 
+                            getResult(items);
+                        });
+                    });
+                }
+                function getResult(items) {
+                    let britHadashaDisplayedHoliday = false;
+                    let britHadashaDisplayed = false;
+                    for (var i = 0; i < items.length; i++) {
+
+                        let date = items[i].date;          
+                        let dateFromJson = new Date(date);
+
+                        let dayDifference = Math.floor((today - dateFromJson)/(24*60*60*1000));
+                                
+                        let title = items[i].title;
+
+                        let haftarah = null;
+                        if (undefined !== items[i].leyning) {
+                            haftarah = items[i].leyning.haftarah;
+                        }
+
+                        let torah = null;
+                        if (undefined !== items[i].leyning) {
+                            torah = items[i].leyning.torah;
+                        }
+
+                        let translationsArray = null;
+                        let readyTorahString = '<b>Тора:</b>';
+                        let readyHaftarahString = '<b>Хавтара:</b>';
+                                
+                        if (items[i].category === 'parashat' && dayDifference <= 0 && dayDifference >= -6) { 
+                            showTorahReading(dateFromJson, title);
+                            showParashaAndCandle(buildReadyString(translate(torah), readyTorahString));
+                            showParashaAndCandle(buildReadyString(translate(haftarah), readyHaftarahString));
+
+                            if (!britHadashaDisplayed) {
+                                showBritHadasha(britHadashaDisplayed, title, torah);
+                                britHadashaDisplayed = true;
+                            }
+
+                            } else if (items[i].category === 'holiday' && dayDifference === 0) {
+                                showTorahReading(dateFromJson, title);
+                                showParashaAndCandle(buildReadyString(translate(torah), readyTorahString));
+                                showParashaAndCandle(buildReadyString(translate(haftarah), readyHaftarahString));
+
+                            if (!britHadashaDisplayedHoliday) {
+                                showBritHadasha(britHadashaDisplayedHoliday, title, torah);
+                                britHadashaDisplayedHoliday = true;
+                            }
+
+                        }
+                    }
+                }   
+            }       
 
             function getCandleLighting() {            
                 fetch('https://www.hebcal.com/shabbat?v=1&cfg=json&lg=ru&city=DE-Munich&gy='+year+'&gm='+month+'&gd='+dateToday).then(function(response) {
@@ -133,8 +728,17 @@
                 });
             }
 
+            function showBritHadasha (originalString, title, torah) {
+                let britHadasha = document.getElementById('britHadasha_' + title + '_' + torah);
+                if (britHadasha !== null) {
+                    paraBritHadasha = britHadasha.innerHTML;
+                    let readyBritHadasha = '<b>Новый Завет:</b>';
+                    showParashaAndCandle(buildReadyString(paraBritHadasha, readyBritHadasha));
+                }
+            }
+
             function translate(originalString) {
-                if (null === originalString) {
+                if (originalString === undefined || originalString === null) {
                     return;
                 }
 
@@ -201,29 +805,51 @@
 
             function getLinkBible(originalString) {
                 let arrayBible = new Map([
-                    ['Exodus', 'Исход'],
-                    ['Ezekiel', 'Иезекииль'],
-                    ['Moshe', 'Моисей'],
+                    ['Исход', 'ex'],
+                    ['Иезекииль', 'eze'],
+                    //TODO check Moshe
+                    ['Моисей', 'mo'],
                     ['Числа', 'nu'],
                     ['Осия', 'ho'],
-                    ['Judges', 'Судьи'],
-                    ['Isaiah', 'Исайя'],
+                    ['Судьи', 'jud'],
+                    ['Исайя', 'isa'],
                     ['Второзаконие', 'de'],
-                    ['Jeremiah', 'Иеремия'],
+                    ['Иеремия', 'jer'],
                     ['Левит', 'le'],
-                    ['II-e Царств', '2ki'],
-                    ['I-e Царств', '1ki'],
+                    ['II-я Царств', '2ki'],
+                    ['I-я Царств', '1ki'],
                     ['Бытие', 'ge'],
-                    ['III-e Царств', '3ki'],
-                    ['IV-e Царств', '4ki'],
-                    ['Malachi', 'Малaхии'],
-                    ['Joshua', 'Иисус Навин'],
-                    ['Amos', 'Амос'],
-                    ['Habakkuk', 'Аввакум'],
-                    ['Zechariah', 'Захария'],
+                    ['III-я Царств', '3ki'],
+                    ['IV-я Царств', '4ki'],
+                    ['Малахия', 'mal'],
+                    ['Иисус Навин', 'jos'],
+                    ['Амос', 'am'],
+                    ['Аввакум', 'hab'],
+                    ['Захария', 'zec'],
                     ['Михей', 'mic'],
-                    ['Иоиля', 'joe'],
-                    ['Obadiah', 'Авдия'],
+                    ['Иоиль', 'joe'],
+                    ['Авдий', 'ob'],
+                    ['К Евреям', 'heb'],
+                    ['Деяния', 'ac'],
+                    ['I-е Петра', '1pe'],
+                    ['От Иоанна', 'joh'],
+                    ['II-е Коринфянам', '2co'],
+                    ['К Римлянам', 'ro'],
+                    ['I-е Коринфянам', '1co'],
+                    ['От Луки', 'lu'],
+                    ['Откровение', 're'],
+                    ['От Матфея', 'mt'],
+                    ['II-е Тимофею', '2ti'],
+                    ['От Марка', 'mr'],
+                    ['Иакова', 'jas'],
+                    ['К Филиппийцам', 'php'],
+                    ['К Галатам', 'ga'],
+                    ['Иуды', 'jude'],
+                    ['II-е Петра', '2pe'],
+                    ['I-е Иоанна', '1jo'],
+                    ['I-е Фессалоникийцам', '1th'],
+                    ['К Ефесянам', 'eph'],
+                    ['К Колоссянам','col']
                 ]);
                 let link = '<a href="[BIBLE_LINK]" target="_blank">' + originalString + '</a>';
                 let linkBible = 'https://allbible.info/bible/sinodal/';
@@ -235,7 +861,7 @@
                 let regex = /\d+/g;
                 let searchNumber = originalString.match(regex);
 
-                let finalNumber = searchNumber[0];
+                let finalNumber = searchNumber[0] + '#' + searchNumber[1];
                     
                 let finalLink = linkBible + searchWord + '/' + finalNumber;
              

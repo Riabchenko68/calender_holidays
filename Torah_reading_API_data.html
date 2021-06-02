@@ -744,10 +744,14 @@
 
                 let translatedString = '';
                 let originalArray = originalString.split(';');
+                let lastFoundWord = null;
                 for (var i = 0; i < originalArray.length; i++) {
                     let originalWord = originalArray[i].slice(0, originalArray[i].search(/\d+/)).trim();
                     if (engRus.get(originalWord)) {
+                        lastFoundWord = engRus.get(originalWord);
                         translatedString += originalArray[i].replace(originalWord, engRus.get(originalWord)).split('|')[0] + '<br>';
+                    } else if (!originalWord && lastFoundWord !== null)  {
+                        translatedString += lastFoundWord + originalArray[i];
                     }
                 }
 
@@ -849,14 +853,14 @@
                     ['I-е Иоанна', '1jo'],
                     ['I-е Фессалоникийцам', '1th'],
                     ['К Ефесянам', 'eph'],
-                    ['К Колоссянам','col']
+                    ['К Колоссянам','col'],
                 ]);
                 let link = '<a href="[BIBLE_LINK]" target="_blank">' + originalString + '</a>';
                 let linkBible = 'https://allbible.info/bible/sinodal/';
                     
                 let catWord = originalString.slice(0, originalString.search(/\d+/)).trim();
 
-                searchWord = arrayBible.get(catWord );
+                searchWord = arrayBible.get(catWord);
 
                 let regex = /\d+/g;
                 let searchNumber = originalString.match(regex);
